@@ -22,8 +22,12 @@ function setup(){
 function draw(){
     image(video, 0, 0, 600, 500);
 
-    fill("#FF0000");
+    fill("#FFFF00");
     stroke("#FF0000")
+
+    circle(rightWristX, rightWristY,18);
+
+
    if(scoreLeftWrist > 0.2){
     circle(leftWristX, leftWristY,20);
     InNumberleftWristY = Number(leftWristY);
@@ -32,7 +36,9 @@ function draw(){
     document.getElementById("volume").innerHTML = "volume = " + volume;
     song.setVolume(volume);
 
-   }
+
+
+}
     
 }
 
@@ -83,6 +89,8 @@ function gotPoses(results)
 
         scoreLeftWrist = results[0].pose.keypoints[9].score;
         console.log("scoreLeftWrist = " + scoreLeftWrist);
+
+        
 
     }
 }
